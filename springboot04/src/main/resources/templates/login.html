@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <form>
+     <h1 th:text="#{login.tip}"></h1>
+     <label th:text="#{login.username}"></label>
+     <input type="text" th:placeholder="#{login.username}">
+     <label th:text="#{login.password}"></label>
+     <input type="password" th:placeholder="#{login.password}"/>
+     <div class="checkbox mb-3">
+         <label>
+             <input type="checkbox" value="remember-me" /> [[#{login.remember}]]
+         </label>
+     </div>
+     <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
+     <a class="btn btn-sm" th:href="@{/login.html(l='zh_CN')}">中文</a>
+     <a class="btn btn-sm" th:href="@{/login.html(l='en_US')}">English</a>
+ </form>
+</body>
+</html>
