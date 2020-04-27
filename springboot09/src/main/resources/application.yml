@@ -4,7 +4,11 @@ spring:
     url: jdbc:mysql://localhost:3306/springboot_jpa?serverTimezone=GMT%2B8
     username: root
     password: root
-
+  # 开启mvc的HiddenHttpMethodFilter，以便可以表单可以发送PUT、DELETE等请求
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   Jpa:
     hibernate:
       # \u66F4\u65B0\u6216\u521B\u5EFA\u6570\u636E\u8868

@@ -39,5 +39,32 @@ public class UserController {
         return save;
 
     }
+    /**
+     * 员工修改
+     *
+     * @param user
+     * @return
+     */
+    @PutMapping("/user")
+    public String updateUser(User user) {
+        System.out.println("修改的员工数据：" + user);
+        userDao.save(user);
+        return "redirect:/users";
+    }
+
+    /**
+     * 员工删除
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/user/{id}")
+    public ModelAndView deleteUser(@PathVariable("id") Integer id) {
+        ModelAndView mv = new ModelAndView("redirect:/users");
+        userDao.delete(id);
+
+        return mv;
+    }
+
 
 }
